@@ -1,0 +1,26 @@
+{
+  "name": "burgers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtala/burgers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtala/burgers/issues"
+  },
+  "homepage": "https://github.com/jtala/burgers#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "install": "^0.12.2",
+    "mysql": "^2.16.0"
+  }
+}
