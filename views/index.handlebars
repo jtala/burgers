@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Burgers to be destroyed!</h1>
+
+        <img src="assets/imgs/burgers.jpg">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Burgers to Eat</h2>
+            <ul>
+              {{!-- Loop over database for all undevoured burgers --}}
+                {{#each burgers}} 
+                {{#unless this.devoured}}
+                <li class="burger-name">
+                    {{this.burger_name}}
+                    <form action="/api/burgers/{{this.id}}" method="POST">
+                        <input type='hidden' name='devoured' value='1'>
+                        <button type='submit' class="btn btn-default">DEVOUR IT!</button>
+                    </form>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h2>Burgers successfully destroyed!</h2>
+            <ul>
+                {{#each burgers}} {{#if this.devoured}}
+                <li class="burger-name">
+                    {{this.burger_name}}
+                    <form action="/api/burgers/{{this.id}}" method="POST">
+                        <input type='hidden' name='devoured' value='0'>
+                    </form>
+                </li>
+                {{/if}} {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-12 add-burger">
+        <h2>Add Custom Burger</h2>
+        <form class="create-form" method="POST" action="api/burgers">
+            <div class="form-group">
+                <input type="text" id="bur" name="name">
+            </div>
+            <button type="submit" class="btn btn-default">Add Burger</button>
+        </form>
+    </div>
+</div>
