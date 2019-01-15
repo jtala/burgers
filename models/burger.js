@@ -22,5 +22,5 @@ var burger ={
 
 };
 
-
+// ------------------------------- EXPORTS TO burgers_controller.js -----------------------
 module.exports = burger;

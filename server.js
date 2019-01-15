@@ -1,8 +1,9 @@
+// Dependcies
 var express = require("express");
 var PORT = process.env.PORT || 8080;
 var app = express();
 
-// Dependency Installation
+// More Dependency Installation..
 
 // img reference is static
 app.use(express.static("public"));
